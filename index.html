@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ACD Lab Tasks (1–7)</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f6f9;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .box {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            display: inline-block;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+
+        .task {
+            margin: 15px 0;
+        }
+
+        button {
+            margin: 5px;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .open {
+            background: #007BFF;
+            color: white;
+        }
+
+        .copy {
+            background: #28a745;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        <h2>Compiler Design Lab (Tasks 1–7)</h2>
+
+        <div class="task">
+            Task 1 – Lexical Analyzer <br>
+            <button class="open" onclick="openFile('task1.c')">Open</button>
+            <button class="copy" onclick="copyFile('task1.c')">Copy</button>
+        </div>
+
+        <div class="task">
+            Task 2 – String Recognition <br>
+            <button class="open" onclick="openFile('task2.c')">Open</button>
+            <button class="copy" onclick="copyFile('task2.c')">Copy</button>
+        </div>
+
+        <div class="task">
+            Task 3 – Symbol Table <br>
+            <button class="open" onclick="openFile('task3.c')">Open</button>
+            <button class="copy" onclick="copyFile('task3.c')">Copy</button>
+        </div>
+
+        <div class="task">
+            Task 4 – Predictive Parser <br>
+            <button class="open" onclick="openFile('task4.c')">Open</button>
+            <button class="copy" onclick="copyFile('task4.c')">Copy</button>
+        </div>
+
+        <div class="task">
+            Task 5 – FIRST & FOLLOW <br>
+            <button class="open" onclick="openFile('task5.v')">Open</button>
+            <button class="copy" onclick="copyFile('task5.v')">Copy</button>
+        </div>
+
+        <div class="task">
+            Task 6 – Operator Precedence <br>
+            <button class="open" onclick="openFile('task6.c')">Open</button>
+            <button class="copy" onclick="copyFile('task6.c')">Copy</button>
+        </div>
+
+        <div class="task">
+            Task 7 – Shift Reduce Parser <br>
+            <button class="open" onclick="openFile('task7.c')">Open</button>
+            <button class="copy" onclick="copyFile('task7.c')">Copy</button>
+        </div>
+
+    </div>
+
+    <script>
+        function openFile(file) {
+            window.open(file, '_blank');
+        }
+
+        function copyFile(file) {
+            fetch(file)
+                .then(response => response.text())
+                .then(text => {
+                    navigator.clipboard.writeText(text);
+                    alert(file + ' copied!');
+                })
+                .catch(() => {
+                    alert('Failed to copy. Make sure you are running via Live Server.');
+                });
+        }
+    </script>
+
+</body>
+
+</html>
